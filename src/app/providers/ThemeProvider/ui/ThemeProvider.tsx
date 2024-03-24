@@ -1,7 +1,7 @@
 import { FC, useMemo, useState } from "react"
 
-import { ThemeContext } from "./ThemeContext"
-import { Theme } from "./theme.types"
+import { ThemeContext } from "../lib/ThemeContext"
+import { Theme } from "../lib/theme.types"
 
 export const LS_THEME_KEY = 'theme';
 

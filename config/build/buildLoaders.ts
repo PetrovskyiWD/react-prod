@@ -2,7 +2,7 @@ import { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BuildOptions } from './types/config';
 
-export default function (options: BuildOptions): RuleSetRule[] {
+export default function(options: BuildOptions): RuleSetRule[] {
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',

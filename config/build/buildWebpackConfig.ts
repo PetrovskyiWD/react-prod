@@ -6,7 +6,7 @@ import buildResolves from "./buildResolves";
 import buildPlugins from "./buildPlugins";
 import buildDevServer from "./buildDevServer";
 
-export default function (options: BuildOptions): Configuration {
+export default function(options: BuildOptions): Configuration {
   const { mode, paths, isDev } = options;
 
   return {
@@ -22,7 +22,7 @@ export default function (options: BuildOptions): Configuration {
     module: {
       rules: buildLoaders(options)
     },
-    resolve: buildResolves(),
+    resolve: buildResolves(options),
     plugins: buildPlugins(options)
   }
 }
