@@ -1,5 +1,6 @@
-import { ThemeTypes, useTheme } from "app/providers/ThemeProvider"
 import { FC } from "react"
+
+import { ThemeTypes, useTheme } from "app/providers/ThemeProvider"
 
 import { Button, ButtonVariants } from "shared/ui"
 

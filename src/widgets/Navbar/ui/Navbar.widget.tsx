@@ -1,10 +1,11 @@
 import { FC } from 'react'
 
 import { cn } from 'shared/lib/classNames'
+
 import { AppLink } from 'shared/ui'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 
-import cls from './Navbar.module.scss'
+import styles from './Navbar.module.scss'
 
 interface NavbarProps {
   className?: string
@@ -12,7 +13,7 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
-    <div className={cn(cls.navbar, [className])}>
+    <div className={cn(styles.navbar, [className])}>
       <ThemeSwitcher />
       <AppLink to='/'>Home</AppLink>
       <AppLink to='/about'>About Us</AppLink>

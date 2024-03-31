@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes, FC } from 'react'
+
 import { cn } from 'shared/lib/classNames'
 
-import cls from './Button.module.scss'
+import styles from './Button.module.scss'
 
 export enum ButtonVariants {
   CLEAR = 'clear',
@@ -14,16 +15,22 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<ButtonProps> = props => {
-  const { className, variant = ButtonVariants.PRIMARY, children, type = 'button', ...rest } = props
+  const {
+    className,
+    variant = ButtonVariants.PRIMARY,
+    type = 'button',
+    children,
+    ...rest
+  } = props
 
   return (
     <button
-      className={cn(className, [cls.btn, cls[`btn-${variant}`]])}
+      className={cn(styles.btn, [className, styles[variant]])}
       type={type}
       {...rest}
     >
       {children}
-    </button >
+    </button>
   )
 }
 
