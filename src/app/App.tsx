@@ -1,5 +1,6 @@
 import { useTheme } from './providers/ThemeProvider'
-import { AppRouter } from './providers/router'
+
+import { AppRouter } from './providers/Router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 
