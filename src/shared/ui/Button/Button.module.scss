@@ -1,0 +1,18 @@
+.btn {
+  cursor: pointer;
+
+  &-primary {
+    color: #000;
+  }
+
+  &-clear {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}

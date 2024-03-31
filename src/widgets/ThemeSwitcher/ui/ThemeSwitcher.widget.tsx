@@ -1,20 +1,26 @@
-import { useTheme } from "app/providers/ThemeProvider"
+import { ThemeTypes, useTheme } from "app/providers/ThemeProvider"
 import { FC } from "react"
 
-interface ThemeSwitcherProps {
-  className?: string
+import { Button, ButtonVariants } from "shared/ui"
+
+import DefaultThemeIcon from 'shared/assets/icons/svg/theme-default.svg'
+import DarkThemeIcon from 'shared/assets/icons/svg/theme-dark.svg'
+
+const ThemeIcon = {
+  [ThemeTypes.LIGHT]: <DefaultThemeIcon />,
+  [ThemeTypes.DARK]: <DarkThemeIcon />
 }
 
-const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
-  const { toggleTheme } = useTheme()
+const ThemeSwitcher: FC = () => {
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <button
-      type='button'
+    <Button
+      variant={ButtonVariants.CLEAR}
       onClick={toggleTheme}
     >
-      Toggle Theme
-    </button>
+      {ThemeIcon[theme]}
+    </Button>
   )
 }
 

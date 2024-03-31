@@ -26,8 +26,14 @@ export default function(options: BuildOptions): RuleSetRule[] {
     ],
   }
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
   return [
     typescriptLoader,
-    styleLoader
+    styleLoader,
+    svgLoader
   ]
 }
