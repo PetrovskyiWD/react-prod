@@ -5,6 +5,7 @@ export default function(options: BuildOptions): DevConFigurations {
   return {
     port: options.port,
     open: false,
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true
   }
 }
