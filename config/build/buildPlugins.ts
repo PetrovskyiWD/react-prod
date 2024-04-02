@@ -1,12 +1,12 @@
-import { WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin } from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { type WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin } from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
-import { BuildOptions } from './types/config';
+import { type BuildOptions } from './types/config'
 
-export default function({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-  return [
+export default function ({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
+  const plugins = [
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html
@@ -15,10 +15,12 @@ export default function({ paths, isDev }: BuildOptions): WebpackPluginInstance[]
       filename: 'styles/[name].[contenthash:8].css',
       chunkFilename: 'styles/[name].[contenthash:8].chunk.css'
     }),
-    new HotModuleReplacementPlugin(),
-    isDev && new ReactRefreshWebpackPlugin(),
     new DefinePlugin({
       __IS_DEV__: isDev
-    }),
-  ].filter(Boolean)
+    })
+  ]
+
+  if (isDev) plugins.push(new ReactRefreshWebpackPlugin(), new HotModuleReplacementPlugin())
+
+  return plugins
 }

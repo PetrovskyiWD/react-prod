@@ -4,11 +4,12 @@
     "noImplicitAny": true,
     "module": "es2020",
     "target": "es5",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "strictNullChecks": true,
     // for absolute import
     "baseUrl": ".",
     "paths": {
@@ -20,5 +21,11 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./src/**/*",
+    "./config/**/*",
+    ".eslintrc.js",
+    "./webpack.config.ts"
+  ]
 }

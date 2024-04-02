@@ -1,8 +1,8 @@
-import { FC } from "react"
+import { type FC } from 'react'
 
-import { ThemeTypes, useTheme } from "app/providers/ThemeProvider"
+import { ThemeTypes, useTheme } from 'app/providers/ThemeProvider'
 
-import { Button, ButtonVariants } from "shared/ui"
+import { Button, ButtonVariants } from 'shared/ui'
 
 import DefaultThemeIcon from 'shared/assets/icons/svg/theme-default.svg'
 import DarkThemeIcon from 'shared/assets/icons/svg/theme-dark.svg'
@@ -26,4 +26,3 @@ const ThemeSwitcher: FC = () => {
 }
 
 export default ThemeSwitcher
-

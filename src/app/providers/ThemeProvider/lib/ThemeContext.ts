@@ -1,8 +1,8 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-import { Theme, IThemeProps } from "./theme.types";
+import { Theme, type IThemeProps } from './theme.types'
 
 export const ThemeContext = createContext<IThemeProps>({
   theme: Theme.LIGHT,
-  setTheme: () => {},
+  setTheme: () => {}
 })

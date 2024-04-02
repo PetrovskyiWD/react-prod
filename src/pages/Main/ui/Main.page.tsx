@@ -1,4 +1,6 @@
-const MainPage = () => {
+import { type FC } from 'react'
+
+const MainPage: FC = () => {
   return (
     <div>
       Main Page
@@ -7,4 +9,3 @@ const MainPage = () => {
 }
 
 export default MainPage
-

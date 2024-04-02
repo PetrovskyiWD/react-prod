@@ -1,13 +1,14 @@
-declare module "*.module.scss";
+declare module '*.module.scss';
 
-declare module "*.svg" {
-  import * as React from "react";
+declare module '*.svg' {
+  import type * as React from 'react'
 
   const ReactComponent: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement> & { title?: string }
-  >;
+  React.SVGProps<SVGSVGElement> & { title?: string }
+  >
 
-  export default ReactComponent;
+  export default ReactComponent
 }
 
-declare const __IS_DEV__: boolean;
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __IS_DEV__: boolean

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import { type ButtonHTMLAttributes, type FC } from 'react'
 
 import { cn } from 'shared/lib/classNames'
 
@@ -10,13 +10,13 @@ export enum ButtonVariants {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string,
+  className?: string
   variant?: ButtonVariants
 }
 
 const Button: FC<ButtonProps> = props => {
   const {
-    className,
+    className = '',
     variant = ButtonVariants.PRIMARY,
     type = 'button',
     children,
@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = props => {
 
   return (
     <button
-      className={cn(styles.btn, [className, styles[variant]])}
+      className={cn(styles.btn as string, [className, styles[variant] as string])}
       type={type}
       {...rest}
     >

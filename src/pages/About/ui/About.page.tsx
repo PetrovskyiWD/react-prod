@@ -1,4 +1,6 @@
-const AboutPage = () => {
+import { type FC } from 'react'
+
+const AboutPage: FC = () => {
   return (
     <div>
       About Page
@@ -7,4 +9,3 @@ const AboutPage = () => {
 }
 
 export default AboutPage
-

@@ -1,22 +1,22 @@
-import { RuleSetRule } from 'webpack';
+import { type RuleSetRule } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshTypeScript from 'react-refresh-typescript'
 
-import { BuildOptions } from './types/config';
+import { type BuildOptions } from './types/config'
 
-export default function({ isDev }: BuildOptions): RuleSetRule[] {
+export default function ({ isDev }: BuildOptions): RuleSetRule[] {
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: {
       loader: 'ts-loader',
       options: {
         getCustomTransformers: () => ({
-          before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+          before: [isDev && ReactRefreshTypeScript()].filter(Boolean)
         }),
-        transpileOnly: isDev,
+        transpileOnly: isDev
       }
     },
-    exclude: /node_modules/,
+    exclude: /node_modules/
   }
 
   const styleLoader: RuleSetRule = {
@@ -24,21 +24,21 @@ export default function({ isDev }: BuildOptions): RuleSetRule[] {
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: (resourcePath: string) => resourcePath.endsWith('.module.scss'),
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
-          },
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
+          }
         }
       },
-      "sass-loader",
-    ],
+      'sass-loader'
+    ]
   }
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
+    use: ['@svgr/webpack']
   }
 
   return [

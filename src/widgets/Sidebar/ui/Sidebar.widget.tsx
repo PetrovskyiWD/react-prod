@@ -1,20 +1,16 @@
-import { FC, useState } from 'react'
+import { type FC, useState } from 'react'
 
 import { cn } from 'shared/lib/classNames'
 
 import styles from './Sidebar.module.scss'
 
-interface SidebarProps {
-  className?: string
-}
-
-const Sidebar: FC<SidebarProps> = ({ className }) => {
+const Sidebar: FC = () => {
   const [collapse, setCollapse] = useState(false)
 
-  const collapseToggle = () => setCollapse(prev => !prev)
+  const collapseToggle = (): void => { setCollapse(prev => !prev) }
 
   return (
-    <div className={cn(styles.sidebar, [className], { [styles.collapsed]: collapse })}>
+    <div className={cn(styles.sidebar as string, [], { [styles.collapsed]: collapse })}>
       <button onClick={collapseToggle}>toggle</button>
       <div>
         Sidebar

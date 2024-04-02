@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from 'shared/lib/classNames'
@@ -9,15 +9,11 @@ import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
 
 import styles from './Navbar.module.scss'
 
-interface NavbarProps {
-  className?: string
-}
-
-const Navbar: FC<NavbarProps> = ({ className }) => {
+const Navbar: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className={cn(styles.navbar, [className])}>
+    <div className={cn(styles.navbar as string)}>
       <ThemeSwitcher />
       <LanguageSwitcher />
       <AppLink to='/'>{t('home')}</AppLink>

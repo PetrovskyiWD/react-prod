@@ -1,3 +1,5 @@
+import { type FC } from 'react'
+
 import { useTheme } from './providers/ThemeProvider'
 
 import { AppRouter } from './providers/Router'
@@ -6,7 +8,7 @@ import { Sidebar } from 'widgets/Sidebar'
 
 import './styles/index.scss'
 
-const App = () => {
+const App: FC = () => {
   const { theme } = useTheme()
 
   return (

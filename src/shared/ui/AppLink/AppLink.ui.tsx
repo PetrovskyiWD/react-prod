@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { Link, LinkProps } from 'react-router-dom'
+import { type FC } from 'react'
+import { Link, type LinkProps } from 'react-router-dom'
 
 import { cn } from 'shared/lib/classNames'
 
@@ -11,13 +11,13 @@ export enum AppLinkVariants {
 }
 
 interface AppLinkProps extends LinkProps {
-  className?: string,
+  className?: string
   variant?: AppLinkVariants
 }
 
 const AppLink: FC<AppLinkProps> = (props) => {
   const { to, className, variant = AppLinkVariants.PRIMARY, children, ...rest } = props
-  const classNames = cn(styles['app-link'], [styles[variant]])
+  const classNames = cn(styles['app-link'] as string, [styles[variant] as string])
 
   return (
     <Link
@@ -31,4 +31,3 @@ const AppLink: FC<AppLinkProps> = (props) => {
 }
 
 export default AppLink
-

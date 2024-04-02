@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { type FC } from 'react'
 import { cn } from 'shared/lib/classNames'
 import { Button, ButtonVariants } from 'shared/ui'
 
@@ -13,17 +13,18 @@ export enum Languages {
 const LanguageSwitcher: FC = () => {
   const { i18n } = useTranslation()
 
-  const changeLang = (langCode: Languages) =>
-    i18n.changeLanguage(langCode)
+  const changeLang = (langCode: Languages): void => {
+    i18n.changeLanguage(langCode).catch((err) => { throw err })
+  }
 
   return (
     <div className={styles.group}>
       {Object.values(Languages).map(l =>
         <Button
           key={l}
-          className={cn(styles.lang, [], { [styles['lang-active']]: l === i18n.language })}
+          className={cn(styles.lang as string, [], { [styles['lang-active']]: l === i18n.language })}
           variant={ButtonVariants.CLEAR}
-          onClick={() => changeLang(l)}
+          onClick={() => { changeLang(l) }}
         >
           {l.toUpperCase()}
         </Button>
