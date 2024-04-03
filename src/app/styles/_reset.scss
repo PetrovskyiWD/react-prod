@@ -1,4 +1,4 @@
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -8,7 +8,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
 }
@@ -25,11 +25,12 @@ ol, ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote::before, blockquote::after, q::before, q::after {
   content: '';
   content: none;
 }
@@ -40,6 +41,6 @@ table {
 }
 
 input {
-  -webkit-appearance: none;
+  appearance: none;
   border-radius: 0;
 }

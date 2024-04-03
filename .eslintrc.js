@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended'
   ],
   overrides: [
   ],
@@ -15,7 +16,8 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    '@stylistic'
+    '@stylistic',
+    'i18next'
   ],
   rules: {
     '@stylistic/semi': [2, 'never']
