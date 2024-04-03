@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { cn } from 'shared/lib/classNames'
+import { cn } from 'shared/lib/classNames/classNames'
 
 import { AppLink } from 'shared/ui'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'

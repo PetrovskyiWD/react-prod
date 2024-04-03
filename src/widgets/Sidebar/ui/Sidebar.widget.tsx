@@ -1,7 +1,7 @@
 import { type FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { cn } from 'shared/lib/classNames'
+import { cn } from 'shared/lib/classNames/classNames'
 
 import styles from './Sidebar.module.scss'
 
