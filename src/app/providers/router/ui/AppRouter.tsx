@@ -2,6 +2,7 @@ import { Suspense, type FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import { routeConfig } from 'shared/config/routeConfig/routeConfig'
+import { PageLoader } from 'widgets/PageLoader'
 
 const AppRouter: FC = () => {
   return (
@@ -11,7 +12,7 @@ const AppRouter: FC = () => {
           key={path}
           path={path}
           element={(
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<PageLoader />}>
               {element}
             </Suspense>
           )}
