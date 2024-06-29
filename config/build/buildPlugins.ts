@@ -2,6 +2,7 @@ import { type WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleRepl
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { type BuildOptions } from './types/config'
 
@@ -17,7 +18,8 @@ export default function ({ paths, isDev }: BuildOptions): WebpackPluginInstance[
     }),
     new DefinePlugin({
       __IS_DEV__: isDev
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 
   if (isDev) plugins.push(new ReactRefreshWebpackPlugin(), new HotModuleReplacementPlugin())
