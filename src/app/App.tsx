@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { Suspense, type FC } from 'react'
 
 import { useTheme } from './providers/ThemeProvider'
 
@@ -13,13 +13,15 @@ const App: FC = () => {
 
   return (
     <div id='app' className={theme}>
-      <Navbar />
-      <main>
-        <Sidebar />
-        <div className='content-block'>
-          <AppRouter />
-        </div>
-      </main>
+      <Suspense fallback="">
+        <Navbar />
+        <main>
+          <Sidebar />
+          <div className='content-block'>
+            <AppRouter />
+          </div>
+        </main>
+      </Suspense>
     </div>
   )
 }

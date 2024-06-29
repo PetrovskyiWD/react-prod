@@ -1,5 +1,7 @@
 {
   "home": "Home",
   "about_us": "About Us",
-  "not_found_page": "Page is not found"
+  "not_found_page": "Page is not found",
+  "something_went_wrong": "Something went wrong...",
+  "please_reload_the_page": "Please, reload the page."
 }
