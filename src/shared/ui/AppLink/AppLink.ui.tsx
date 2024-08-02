@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
   variant?: AppLinkVariants
 }
 
-const AppLink: FC<AppLinkProps> = (props) => {
+const AppLink: FC<AppLinkProps> = props => {
   const { to, className, variant = AppLinkVariants.PRIMARY, children, ...rest } = props
   const classNames = cn(styles['app-link'] as string, [styles[variant] as string])
 

@@ -21,5 +21,10 @@ module.exports = {
   ],
   rules: {
     '@stylistic/semi': [2, 'never']
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }

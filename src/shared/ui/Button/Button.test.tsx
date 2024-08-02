@@ -1,14 +1,18 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import Button from './Button.ui'
+import Button, { ButtonVariants } from './Button.ui'
 
-describe('Button component', () => {
-  test('Load and display the Button', () => {
-    render(<Button>{'My button'}</Button>)
+describe('Button component:', () => {
+  test('load and display', () => {
+    render(<Button>{'Click me!'}</Button>)
 
-    const buttonElement = screen.getByText('My button')
+    expect(screen.getByText('Click me!')).toBeInTheDocument()
+  })
 
-    expect(buttonElement).toBeInTheDocument()
+  test('should have "clear" class', () => {
+    render(<Button variant={ButtonVariants.CLEAR}>{'Click me!'}</Button>)
+
+    expect(screen.getByText('Click me!')).toHaveClass('clear')
   })
 })

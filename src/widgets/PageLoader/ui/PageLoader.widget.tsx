@@ -6,7 +6,7 @@ import styles from './PageLoader.module.scss'
 
 const PageLoader: FC = () => {
   return (
-    <div className={styles.PageLoader}>
+    <div className={styles['page-loader']}>
       <Loader />
     </div>
   )

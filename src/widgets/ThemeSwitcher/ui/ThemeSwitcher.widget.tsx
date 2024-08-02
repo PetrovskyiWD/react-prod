@@ -19,7 +19,7 @@ const ThemeSwitcher: FC = () => {
 
   return (
     <Button
-      className={styles.ThemeSwitchBtn}
+      className={styles['theme-switch-btn']}
       variant={ButtonVariants.CLEAR}
       onClick={toggleTheme}
     >

@@ -7,7 +7,7 @@ const PageError: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className={styles.PageError}>
+    <div className={styles['page-error']}>
       <p>{t('something_went_wrong')}</p>
       <p>{t('please_reload_the_page')}</p>
     </div>

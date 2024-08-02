@@ -12,8 +12,16 @@ const Sidebar: FC = () => {
   const collapseToggle = (): void => { setCollapse(prev => !prev) }
 
   return (
-    <div className={cn(styles.sidebar as string, [], { [styles.collapsed]: collapse })}>
-      <button onClick={collapseToggle}>#||#</button>
+    <div
+      className={cn(styles.sidebar as string, [], { [styles.collapsed]: collapse })}
+      data-testid='sidebar-widget'
+    >
+      <button
+        onClick={collapseToggle}
+        data-testid='sidebar-collapse-btn'
+      >
+        #||#
+      </button>
       <div>
         {t('sidebar')}
       </div>
