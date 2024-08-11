@@ -22,7 +22,7 @@ i18n
     debug: true,
 
     interpolation: {
-      escapeValue: __IS_DEV__ // not needed for react as it escapes by default
+      escapeValue: false // not needed for react as it escapes by default
     }
   }).catch(err => { throw err })
 
