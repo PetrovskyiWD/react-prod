@@ -12,12 +12,12 @@ const App: FC = () => {
   const { theme } = useTheme()
 
   return (
-    <div id='app' className={theme}>
+    <div id="app" className={theme}>
       <Suspense fallback="">
         <Navbar />
         <main>
           <Sidebar />
-          <div className='content-block'>
+          <div className="content-block">
             <AppRouter />
           </div>
         </main>

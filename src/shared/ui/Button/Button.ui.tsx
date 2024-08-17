@@ -15,21 +15,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants
 }
 
-const Button: FC<ButtonProps> = props => {
-  const {
-    className = '',
-    variant = ButtonVariants.PRIMARY,
-    type = 'button',
-    children,
-    ...rest
-  } = props
+const Button: FC<ButtonProps> = (props) => {
+  const { className = '', variant = ButtonVariants.PRIMARY, type = 'button', children, ...rest } = props
 
   return (
-    <button
-      className={cn(styles.btn as string, [className, styles[variant] as string])}
-      type={type}
-      {...rest}
-    >
+    <button className={cn(styles.btn as string, [className, styles[variant] as string])} type={type} {...rest}>
       {children}
     </button>
   )

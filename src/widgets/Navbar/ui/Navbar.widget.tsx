@@ -16,8 +16,8 @@ const Navbar: FC = () => {
     <div className={cn(styles.navbar as string)}>
       <ThemeSwitcher />
       <LanguageSwitcher />
-      <AppLink to='/'>{t('home')}</AppLink>
-      <AppLink to='/about'>{t('about_us')}</AppLink>
+      <AppLink to="/">{t('home')}</AppLink>
+      <AppLink to="/about">{t('about_us')}</AppLink>
     </div>
   )
 }

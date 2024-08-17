@@ -18,11 +18,7 @@ const ThemeSwitcher: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <Button
-      className={styles['theme-switch-btn']}
-      variant={ButtonVariants.CLEAR}
-      onClick={toggleTheme}
-    >
+    <Button className={styles['theme-switch-btn']} variant={ButtonVariants.CLEAR} onClick={toggleTheme}>
       {ThemeIcon[theme]}
     </Button>
   )

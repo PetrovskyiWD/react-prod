@@ -4,7 +4,7 @@ import { ThemeContext } from './ThemeContext'
 import { type IUseThemeResult, Theme } from './theme.types'
 import { LS_THEME_KEY } from '../ui/ThemeProvider'
 
-export function useTheme (): IUseThemeResult {
+export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext)
 
   const toggleTheme = (): void => {
