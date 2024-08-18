@@ -13,7 +13,7 @@ const Navbar: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className={cn(styles.navbar as string)}>
+    <div className={cn(styles.navbar as string)} data-testid="navbar-widget">
       <ThemeSwitcher />
       <LanguageSwitcher />
       <AppLink to="/">{t('home')}</AppLink>
