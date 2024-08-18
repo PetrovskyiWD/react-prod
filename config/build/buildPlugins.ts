@@ -17,12 +17,15 @@ export default function ({ paths, isDev }: BuildOptions): WebpackPluginInstance[
       chunkFilename: 'styles/[name].[contenthash:8].chunk.css'
     }),
     new DefinePlugin({
-      __IS_DEV__: isDev
-    }),
-    new BundleAnalyzerPlugin()
+      __IS_DEV__: JSON.stringify(isDev)
+    })
   ]
 
-  if (isDev) plugins.push(new ReactRefreshWebpackPlugin(), new HotModuleReplacementPlugin())
+  if (isDev) plugins.push(
+    new ReactRefreshWebpackPlugin(),
+    new HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin()
+  )
 
   return plugins
 }
