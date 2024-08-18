@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install
+        # -- force is needed because of https://github.com/oblador/loki/pull/509
+        run: npm install --force
       - name: Build production
         run: npm run build:prod
       - name: ESLint
