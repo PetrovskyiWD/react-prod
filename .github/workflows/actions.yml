@@ -1,0 +1,29 @@
+name: Lint, Test, Build
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build production
+        run: npm run build:prod
+      - name: ESLint
+        run: npm run lint
+      - name: Stylelint
+        run: npm run stylelint
+      - name: Prettier
+        run: npm run prettier
+      - name: Unit tests
+        run: npm run test:unit
+
+
