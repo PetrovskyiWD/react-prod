@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import { cn } from 'shared/lib/classNames/classNames'
-import { Button, ButtonVariants } from 'shared/ui'
+import { Button, ButtonVariant } from 'shared/ui'
 
 import styles from './LanguageSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -24,8 +24,8 @@ const LanguageSwitcher: FC = () => {
       {Object.values(Languages).map((l) => (
         <Button
           key={l}
-          className={cn(styles.lang as string, [], { [styles['lang-active']]: l === i18n.language })}
-          variant={ButtonVariants.CLEAR}
+          className={cn(styles.lang, [], { [styles['lang-active']]: l === i18n.language })}
+          variant={ButtonVariant.CLEAR}
           onClick={() => {
             changeLang(l)
           }}

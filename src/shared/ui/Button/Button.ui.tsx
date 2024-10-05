@@ -4,22 +4,39 @@ import { cn } from 'shared/lib/classNames/classNames'
 
 import styles from './Button.module.scss'
 
-export enum ButtonVariants {
-  CLEAR = 'clear',
+export enum ButtonVariant {
   PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  CLEAR = 'clear',
   OUTLINE = 'outline'
+}
+
+export enum ButtonSize {
+  M = 'size-m',
+  L = 'size-l',
+  XL = 'size-xl'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
-  variant?: ButtonVariants
+  variant?: ButtonVariant
+  square?: boolean
+  size?: ButtonSize
 }
 
-const Button: FC<ButtonProps> = (props) => {
-  const { className = '', variant = ButtonVariants.PRIMARY, type = 'button', children, ...rest } = props
+const Button: FC<ButtonProps> = ({
+  className = '',
+  variant = ButtonVariant.PRIMARY,
+  square = false,
+  size = ButtonSize.M,
+  type = 'button',
+  children,
+  ...rest
+}) => {
+  const classNames = cn(styles.btn, [className, styles[variant], styles[size]], { [styles.square]: square })
 
   return (
-    <button className={cn(styles.btn as string, [className, styles[variant] as string])} type={type} {...rest}>
+    <button className={classNames} type={type} {...rest}>
       {children}
     </button>
   )

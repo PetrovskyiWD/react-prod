@@ -1,4 +1,5 @@
 .btn {
+  border: none;
   cursor: pointer;
 
   svg {
@@ -7,7 +8,13 @@
 }
 
 .primary {
-  color: #000;
+  color: var(---text-color);
+  background-color: var(---bg-color);
+}
+
+.secondary {
+  color: var(--inverted-text-color);
+  background-color: var(--inverted-bg-color);
 }
 
 .clear {
@@ -22,4 +29,26 @@
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background-color: transparent;
+}
+
+.square {
+  padding: 0;
+
+  &.size-m {
+    width: var(--line-height-m);
+    height: var(--line-height-m);
+    font-size: var(--font-m);
+  }
+
+  &.size-l {
+    width: var(--line-height-l);
+    height: var(--line-height-l);
+    font-size: var(--font-l);
+  }
+
+  &.size-xl {
+    width: var(--line-height-xl);
+    height: var(--line-height-xl);
+    font-size: var(--font-xl);
+  }
 }

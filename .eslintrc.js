@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
-    "prettier"
+    'prettier'
   ],
   overrides: [
   ],
@@ -24,7 +24,8 @@ module.exports = {
   rules: {
     '@stylistic/semi': [2, 'never'],
     'max-len': ['error', { code: 120 }],
-    'comma-dangle': ['error', 'never']
+    'comma-dangle': ['error', 'never'],
+    'quotes': ['error', 'single']
   },
   settings: {
     react: {
