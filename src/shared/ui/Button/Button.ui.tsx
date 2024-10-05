@@ -7,8 +7,7 @@ import styles from './Button.module.scss'
 export enum ButtonVariant {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
-  CLEAR = 'clear',
-  OUTLINE = 'outline'
+  CLEAR = 'clear'
 }
 
 export enum ButtonSize {

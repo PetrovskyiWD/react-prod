@@ -32,13 +32,6 @@ export const Clear: Story = {
   }
 }
 
-export const Outline: Story = {
-  args: {
-    children: 'Button',
-    variant: ButtonVariant.OUTLINE
-  }
-}
-
 export const Square: Story = {
   args: {
     children: '>',
