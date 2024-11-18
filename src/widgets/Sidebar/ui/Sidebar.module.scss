@@ -2,7 +2,10 @@
   position: relative;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-  padding: 10px 15px;
+  padding: 10px 15px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--inverted-bg-color);
   color: var(--inverted-text-color);
   transition: width 0.2s ease-in;

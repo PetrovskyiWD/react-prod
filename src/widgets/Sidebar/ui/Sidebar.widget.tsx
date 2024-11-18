@@ -1,11 +1,14 @@
 import { type FC, useState } from 'react'
+import { AppLink , Button } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from 'shared/lib/classNames/classNames'
-import { Button } from 'shared/ui'
+import { ButtonSize } from 'shared/ui/Button/Button.ui'
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 
 import styles from './Sidebar.module.scss'
-import { ButtonSize } from 'shared/ui/Button/Button.ui'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 const Sidebar: FC = () => {
   const [collapse, setCollapse] = useState(false)
@@ -17,6 +20,20 @@ const Sidebar: FC = () => {
 
   return (
     <div className={cn(styles.sidebar, [], { [styles.collapsed]: collapse })} data-testid="sidebar-widget">
+      <ul>
+        <li>
+          <AppLink to={RoutePath.main}>{t('home')}</AppLink>
+        </li>
+        <li>
+          <AppLink to={RoutePath.about}>{t('about_us')}</AppLink>
+        </li>
+      </ul>
+
+      <div className='d-flex flex-column justify-content-center align-items-center g-3'>
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+      </div>
+    
       <Button
         className={styles['collapse-btn']}
         square
@@ -26,7 +43,6 @@ const Sidebar: FC = () => {
       >
         {collapse ? '>' : '<'}
       </Button>
-      <div>{t('sidebar')}</div>
     </div>
   )
 }
