@@ -2,7 +2,7 @@
   position: relative;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-  padding: 10px 15px; 
+  padding: 10px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,7 +27,7 @@
   }
 
   span {
-    transition: opacity .2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
   }
 
   svg {

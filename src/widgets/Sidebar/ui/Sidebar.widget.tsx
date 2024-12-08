@@ -1,5 +1,5 @@
 import { type FC, useState } from 'react'
-import { AppLink , Button } from 'shared/ui'
+import { AppLink, Button } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from 'shared/lib/classNames/classNames'
@@ -24,30 +24,24 @@ const Sidebar: FC = () => {
     <div className={cn(styles.sidebar, [], { [styles.collapsed]: collapse })} data-testid="sidebar-widget">
       <ul className={styles['sidebar-list']}>
         <li>
-          <AppLink
-            className={styles['sidebar-link']}
-            to={RoutePath.main}
-          >
+          <AppLink className={styles['sidebar-link']} to={RoutePath.main}>
             <HomeIcon />
-           <span>{t('home')}</span>
+            <span>{t('home')}</span>
           </AppLink>
         </li>
         <li>
-          <AppLink
-            className={styles['sidebar-link']}
-            to={RoutePath.about}
-          >
+          <AppLink className={styles['sidebar-link']} to={RoutePath.about}>
             <AboutIcon />
             <span>{t('about_us')}</span>
           </AppLink>
         </li>
       </ul>
 
-      <div className='d-flex flex-column justify-content-center align-items-center g-3'>
+      <div className="d-flex flex-column justify-content-center align-items-center g-3">
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
-    
+
       <Button
         className={styles['collapse-btn']}
         square
