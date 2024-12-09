@@ -14,7 +14,7 @@ export default function ComponentRouter(
 ): ReturnType<typeof render> {
   const { route = '/' } = options
 
-  return render (
+  return render(
     <MemoryRouter initialEntries={[route]}>
       <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
     </MemoryRouter>
