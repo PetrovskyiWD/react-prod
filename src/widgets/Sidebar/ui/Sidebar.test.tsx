@@ -1,10 +1,10 @@
 import { fireEvent, screen } from '@testing-library/react'
 import Sidebar from './Sidebar.widget'
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation'
+import ComponentRender from 'shared/lib/tests/ComponentRender'
 
 describe('Sidebar widget:', () => {
   test('load and display', () => {
-    renderWithTranslation(<Sidebar />)
+    ComponentRender(<Sidebar />)
 
     const sidebar = screen.getByTestId('sidebar-widget')
 
@@ -13,7 +13,7 @@ describe('Sidebar widget:', () => {
   })
 
   test('collapse toggle', () => {
-    renderWithTranslation(<Sidebar />)
+    ComponentRender(<Sidebar />)
 
     const sidebar = screen.getByTestId('sidebar-widget')
     const toggleBtn = screen.getByTestId('sidebar-collapse-btn')

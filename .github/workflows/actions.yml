@@ -20,15 +20,21 @@ jobs:
         run: npm run build:prod
       - name: ESLint
         run: npm run lint
+        if: always()
       - name: Stylelint
         run: npm run stylelint
+        if: always()
       - name: Prettier
         run: npm run prettier
+        if: always()
       - name: Unit tests
         run: npm run test:unit
+        if: always()
       - name: Build storybook
         run: npm run storybook:build
+        if: always()
       - name: Screenshot tests
         run: npm run test:ui:ci
+        if: always()
 
 
