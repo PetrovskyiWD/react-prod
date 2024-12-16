@@ -4,10 +4,13 @@
 @use 'themes/dark';
 @use 'global' as global2;
 
-#app {
-  background-color: var(--bg-color);
+body {
   color: var(--text-color);
   font: var(--font-m);
+}
+
+#app {
+  background-color: var(--bg-color);
   min-height: 100vh;
 }
 

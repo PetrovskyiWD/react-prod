@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 
 import { ThemeContext } from './ThemeContext'
 import { type IUseThemeResult, Theme } from './theme.types'
@@ -12,6 +12,11 @@ export function useTheme(): IUseThemeResult {
     localStorage.setItem(LS_THEME_KEY, newTheme)
     setTheme(newTheme)
   }
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', theme === Theme.DARK)
+    document.body.classList.toggle('light', theme === Theme.LIGHT)
+  }, [theme])
 
   return { theme, toggleTheme }
 }
