@@ -32,11 +32,14 @@ const Modal: React.FC<IModalProps> = ({ className = '', isOpen = false, onClose,
     }, ANIMATION_DELAY)
   }, [onClose])
 
-  const handleKeyDown = useCallback((e: KeyboardEvent): void => {
-    if (e.key === 'Escape') {
-      handleClose()
-    }
-  }, [handleClose])
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') {
+        handleClose()
+      }
+    },
+    [handleClose]
+  )
 
   const handleContentClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     e.stopPropagation()

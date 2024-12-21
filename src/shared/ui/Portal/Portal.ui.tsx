@@ -5,8 +5,6 @@ interface IPortalProps {
   element?: HTMLElement
 }
 
-const Portal: React.FC<IPortalProps> = ({ children, element = document.body }) => (
-   createPortal(children, element)
-)
+const Portal: React.FC<IPortalProps> = ({ children, element = document.body }) => createPortal(children, element)
 
 export default Portal

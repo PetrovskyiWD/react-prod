@@ -19,21 +19,15 @@ const Navbar: FC = () => {
       <div className={cn(styles.navbar)} data-testid="navbar-widget">
         <ul>
           <li>
-            <Button
-              variant={ButtonVariant.CLEAR_INVERTED}
-              onClick={handleToggleModal}
-            >
-              {t('sign_in')} 
+            <Button variant={ButtonVariant.CLEAR_INVERTED} onClick={handleToggleModal}>
+              {t('sign_in')}
             </Button>
           </li>
         </ul>
       </div>
 
-      <Modal
-        isOpen={showModal}
-        onClose={handleToggleModal}
-        >
-          {t('sign_in')}
+      <Modal isOpen={showModal} onClose={handleToggleModal}>
+        {t('sign_in')}
       </Modal>
     </>
   )
