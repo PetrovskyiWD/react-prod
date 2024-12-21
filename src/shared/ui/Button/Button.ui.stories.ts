@@ -32,6 +32,13 @@ export const Clear: Story = {
   }
 }
 
+export const ClearInverted: Story = {
+  args: {
+    children: 'Button',
+    variant: ButtonVariant.CLEAR_INVERTED
+  }
+}
+
 export const Square: Story = {
   args: {
     children: '>',

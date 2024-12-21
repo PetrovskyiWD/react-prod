@@ -7,8 +7,6 @@ import { Button, ButtonVariant } from 'shared/ui'
 import DefaultThemeIcon from 'shared/assets/icons/svg/theme-default.svg'
 import DarkThemeIcon from 'shared/assets/icons/svg/theme-dark.svg'
 
-import styles from './ThemeSwitcher.module.scss'
-
 const ThemeIcon = {
   [ThemeTypes.LIGHT]: <DefaultThemeIcon />,
   [ThemeTypes.DARK]: <DarkThemeIcon />
@@ -18,7 +16,7 @@ const ThemeSwitcher: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <Button className={styles['theme-switch-btn']} variant={ButtonVariant.CLEAR} onClick={toggleTheme}>
+    <Button variant={ButtonVariant.CLEAR} onClick={toggleTheme}>
       {ThemeIcon[theme]}
     </Button>
   )
