@@ -18,11 +18,22 @@
   border: 1px solid var(--text-color);
 }
 
-.clear {
+.clear,
+.clear-inverted {
   margin: 0;
   padding: 0;
   background-color: transparent;
+  color: var(--text-color);
   border: none;
+  transition: opacity 0.15s ease-in;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.clear-inverted {
+  color: var(--inverted-text-color);
 }
 
 .square {

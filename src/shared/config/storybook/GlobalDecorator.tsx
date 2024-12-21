@@ -12,13 +12,19 @@ const ClobalDecorator: Decorator = (Story, { globals }) => {
     const changeLanguage = async (): Promise<void> => {
       await i18n.changeLanguage(locale as string)
     }
+
     changeLanguage().catch((error) => {
       console.error(error)
     })
   }, [locale])
 
+  useEffect(() => {
+    document.body.classList.toggle('light', theme === 'light')
+    document.body.classList.toggle('dark', theme === 'dark')
+  }, [theme])
+
   return (
-    <div id="app" className={theme} style={{ padding: '1rem', margin: '-1rem' }}>
+    <div id="app" style={{ padding: '1rem', margin: '-1rem' }}>
       <BrowserRouter>
         <ThemeProvider>
           <Suspense fallback={<div>loading translations...</div>}>
