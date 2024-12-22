@@ -7,6 +7,6 @@ export const createReduxStore = (initialState?: IStateSchema): ReturnType<typeof
     preloadedState: initialState,
     devTools: __IS_DEV__
   })
-} 
+}
 
 // export type RootState = ReturnType<typeof store.getState>
