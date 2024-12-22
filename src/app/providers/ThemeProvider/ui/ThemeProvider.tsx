@@ -5,7 +5,11 @@ import { Theme } from '../lib/theme.types'
 
 export const LS_THEME_KEY = 'theme'
 
-const ThemeProvider: FC = ({ children }) => {
+interface IThemeProviderProps {
+  children: React.ReactNode
+}
+
+const ThemeProvider: FC<IThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>((localStorage.getItem(LS_THEME_KEY) as Theme) ?? Theme.LIGHT)
 
   const defaultProps = useMemo(
