@@ -5,7 +5,6 @@
 
 import type { Config } from 'jest'
 import path from 'path'
-import { TextEncoder } from 'util'
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
