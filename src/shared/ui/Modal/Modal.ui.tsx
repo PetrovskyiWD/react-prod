@@ -10,13 +10,15 @@ interface IModalProps {
   className?: string
   children: React.ReactNode
   isOpen?: boolean
+  lazy?: boolean
   onClose?: () => void
 }
 
 const ANIMATION_DELAY = 300
 
-const Modal: React.FC<IModalProps> = ({ className = '', isOpen = false, onClose, children }) => {
+const Modal: React.FC<IModalProps> = ({ className = '', isOpen = false, lazy = false, onClose, children }) => {
   const [isClosing, setIsClosing] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
   const modalClasses = cn(styles.modal, [className], {
     [styles.show]: isOpen,
@@ -55,6 +57,14 @@ const Modal: React.FC<IModalProps> = ({ className = '', isOpen = false, onClose,
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [isOpen, handleKeyDown])
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
+
+  if (lazy && !isMounted) return null
 
   return (
     <Portal>

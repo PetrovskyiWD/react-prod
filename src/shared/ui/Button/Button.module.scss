@@ -1,5 +1,7 @@
 .btn {
+  padding: var(--spacing-s) var(--spacing-m);
   border: none;
+  border-radius: var(--border-radius-s);
   cursor: pointer;
   transition: all 0.15s ease-in;
 
