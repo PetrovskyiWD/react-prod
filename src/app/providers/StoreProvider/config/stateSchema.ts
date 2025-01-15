@@ -1,2 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IStateSchema {}
+import { type IUserSchema } from 'entities/user'
+
+export interface IStateSchema {
+  user: IUserSchema
+}
