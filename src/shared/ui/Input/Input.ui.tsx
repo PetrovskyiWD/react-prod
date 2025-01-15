@@ -12,13 +12,7 @@ interface IInputProps extends THTMLInputProps {
   onChange?: (value: string) => void
 }
 
-const Input = memo(function Input({
-  className = '',
-  type = 'text',
-  value,
-  onChange,
-  ...rest 
-}: IInputProps) {
+const Input = memo(function Input({ className = '', type = 'text', value, onChange, ...rest }: IInputProps) {
   const classNames = cn(styles.input, [className])
 
   const hnadleOnChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -26,7 +20,7 @@ const Input = memo(function Input({
   }
 
   return (
-    <div className={styles.inputWrapper}>
+    <div className={styles['input-wrapper']}>
       <input className={classNames} type={type} value={value} onChange={hnadleOnChange} {...rest} />
     </div>
   )

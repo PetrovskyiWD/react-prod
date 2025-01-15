@@ -7,9 +7,9 @@ const LoginForm: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className={styles.loginForm}>
-      <Input type='text' name="username" placeholder='Username' />
-      <Input type='password' name="password" placeholder='Password' />
+    <div className={styles['login-form']}>
+      <Input type="text" name="username" placeholder="Username" />
+      <Input type="password" name="password" placeholder="Password" />
       <Button>{t('sign_in')}</Button>
     </div>
   )
