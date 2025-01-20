@@ -4,8 +4,9 @@ import { BrowserRouter } from 'react-router-dom'
 import i18n from '../i18n/i18n'
 import { Suspense, useEffect } from 'react'
 import { ThemeProvider } from 'app/providers/ThemeProvider'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
-const ClobalDecorator: Decorator = (Story, { globals }) => {
+const GlobalDecorator: Decorator = (Story, { globals }) => {
   const { locale, theme } = globals
 
   useEffect(() => {
@@ -29,7 +30,9 @@ const ClobalDecorator: Decorator = (Story, { globals }) => {
         <ThemeProvider>
           <Suspense fallback={<div>loading translations...</div>}>
             <I18nextProvider i18n={i18n}>
-              <Story />
+              <StoreProvider>
+                <Story />
+              </StoreProvider>
             </I18nextProvider>
           </Suspense>
         </ThemeProvider>
@@ -38,4 +41,4 @@ const ClobalDecorator: Decorator = (Story, { globals }) => {
   )
 }
 
-export default ClobalDecorator
+export default GlobalDecorator

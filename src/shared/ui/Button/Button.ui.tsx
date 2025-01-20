@@ -1,6 +1,7 @@
 import { type ButtonHTMLAttributes, type FC } from 'react'
 
 import { cn } from 'shared/lib/classNames/classNames'
+import Loader, { LoaderSize, LoaderVariant } from '../Loader/Loader.ui'
 
 import styles from './Button.module.scss'
 
@@ -22,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
   square?: boolean
   size?: ButtonSize
+  loading?: boolean
 }
 
 const Button: FC<ButtonProps> = ({
@@ -30,14 +32,16 @@ const Button: FC<ButtonProps> = ({
   square = false,
   size = ButtonSize.M,
   type = 'button',
+  loading = false,
   children,
   ...rest
 }) => {
   const classNames = cn(styles.btn, [className, styles[variant], styles[size]], { [styles.square]: square })
+  const loaderVariant = variant === ButtonVariant.PRIMARY ? LoaderVariant.INVERTED : LoaderVariant.PRIMARY
 
   return (
-    <button className={classNames} type={type} {...rest}>
-      {children}
+    <button className={classNames} type={type} disabled={loading} data-testid="button" {...rest}>
+      {loading ? <Loader variant={loaderVariant} size={LoaderSize.S} /> : children}
     </button>
   )
 }

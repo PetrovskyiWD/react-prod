@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Loader from './Loader.ui'
+import Loader, { LoaderSize } from './Loader.ui'
 
 const meta = {
   title: 'shared/Loader',
@@ -11,7 +11,21 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {}
+  args: {
+    size: LoaderSize.L
+  }
+}
+
+export const Medium: Story = {
+  args: {
+    size: LoaderSize.M
+  }
+}
+
+export const Small: Story = {
+  args: {
+    size: LoaderSize.S
+  }
 }
 
 export default meta

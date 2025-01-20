@@ -62,4 +62,10 @@ export const SquareXl: Story = {
   }
 }
 
+export const WithLoader: Story = {
+  args: {
+    loading: true
+  }
+}
+
 export default meta

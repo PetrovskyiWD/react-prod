@@ -1,12 +1,32 @@
 .loader {
-  width: 48px;
-  height: 48px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 3px solid var(--inverted-bg-color);
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+.primary {
+  border-top: 3px solid var(--inverted-bg-color);
+}
+
+.inverted {
+  border-top: 3px solid var(--bg-color);
+}
+
+.size-s {
+  width: 12px;
+  height: 12px;
+}
+
+.size-m {
+  width: 24px;
+  height: 24px;
+}
+
+.size-l {
+  width: 48px;
+  height: 48px;
 }
 
 @keyframes rotation {

@@ -15,4 +15,11 @@ describe('Button component:', () => {
 
     expect(screen.getByText('Click me!')).toHaveClass('clear')
   })
+
+  test('should have loader', () => {
+    render(<Button loading>{'Click me!'}</Button>)
+
+    expect(screen.queryByText('Click me!')).not.toBeInTheDocument()
+    expect(screen.getByTestId('loader')).toBeInTheDocument()
+  })
 })

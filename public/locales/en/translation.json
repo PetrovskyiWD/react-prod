@@ -4,5 +4,9 @@
   "not_found_page": "Page is not found",
   "something_went_wrong": "Something went wrong...",
   "please_reload_the_page": "Please, reload the page.",
-  "sign_in": "Sign In"
+  "sign_in": "Sign In",
+  "logout": "Log Out",
+  "username": "Username",
+  "password": "Password",
+  "auth_by_username_error": "Auth credentials are invalid"
 }
