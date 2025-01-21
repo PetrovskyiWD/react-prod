@@ -2,7 +2,7 @@ import { useCallback, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Input, Typography } from 'shared/ui'
-import { loginActions, getLoginState, loginByUsername } from 'features/AuthByUsername'
+import { loginActions, getLoginState, loginByUsername, LoginErrors } from 'features/AuthByUsername'
 
 import styles from './LoginForm.module.scss'
 import { TypographySize, TypographyVariant } from 'shared/ui/Typography/Typography.ui'
@@ -41,8 +41,8 @@ const LoginForm: FC = () => {
         onChange={handleChangePassword}
       />
 
-      {error !== undefined ? (
-        <Typography text={error} variant={TypographyVariant.ERROR} size={TypographySize.S} />
+      {error === LoginErrors.INCORRECT_AUTH_DATA ? (
+        <Typography text={t('auth_by_username_error')} variant={TypographyVariant.ERROR} size={TypographySize.S} />
       ) : null}
 
       <Button loading={isLoading} onClick={handleLogin}>

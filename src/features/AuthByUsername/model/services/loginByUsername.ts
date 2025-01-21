@@ -1,15 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import i18n from 'shared/config/i18n/i18n'
 import { userActions, type User } from 'essences/user'
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localStorage'
+import { LoginErrors } from '../types/loginSchema'
 
 interface LoginByUsernameProps {
   username: string
   password: string
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string }>(
+export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: LoginErrors }>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
     try {
@@ -25,7 +25,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
 
       return response.data
     } catch (e) {
-      return thunkAPI.rejectWithValue(i18n.t('auth_by_username_error'))
+      return thunkAPI.rejectWithValue(LoginErrors.INCORRECT_AUTH_DATA)
     }
   }
 )
