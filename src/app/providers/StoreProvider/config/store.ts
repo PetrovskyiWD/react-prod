@@ -1,10 +1,12 @@
 import { type ReducersMapObject, configureStore } from '@reduxjs/toolkit'
 import { type IStateSchema } from './stateSchema'
-import { userReducer } from 'entities/user'
+import { userReducer } from 'essences/user'
+import { loginReducer } from 'features/AuthByUsername'
 
 export const createReduxStore = (initialState?: IStateSchema): ReturnType<typeof configureStore> => {
   const rootReducer: ReducersMapObject<IStateSchema> = {
-    user: userReducer
+    user: userReducer,
+    loginForm: loginReducer
   }
 
   return configureStore<IStateSchema>({
@@ -13,5 +15,3 @@ export const createReduxStore = (initialState?: IStateSchema): ReturnType<typeof
     devTools: __IS_DEV__
   })
 }
-
-// export type RootState = ReturnType<typeof store.getState>

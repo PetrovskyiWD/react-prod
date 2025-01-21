@@ -4,5 +4,9 @@
   "not_found_page": "Сторінка не знайдена",
   "something_went_wrong": "Щось пішло не так...",
   "please_reload_the_page": "Будь ласка, перезавантажте сторінку.",
-  "sign_in": "Увійти"
+  "sign_in": "Увійти",
+  "logout": "Вийти",
+  "username": "Ім'я користувача",
+  "password": "Пароль",
+  "auth_by_username_error": "Неправильні дані авторизації"
 }

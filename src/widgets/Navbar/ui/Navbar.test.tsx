@@ -1,16 +1,10 @@
-import { render, screen } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
-
+import ComponentRender from 'shared/lib/tests/ComponentRender'
 import Navbar from './Navbar.widget'
 
 describe('Navbar widget:', () => {
-  test('load and display', () => {
-    render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
-    )
+  it('load and display', () => {
+    const { getByTestId } = ComponentRender(<Navbar />)
 
-    expect(screen.getByTestId('navbar-widget')).toBeInTheDocument()
+    expect(getByTestId('navbar-widget')).toBeInTheDocument()
   })
 })

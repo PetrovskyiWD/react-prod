@@ -3,9 +3,9 @@ import { memo } from 'react'
 import styles from './Input.module.scss'
 import { cn } from 'shared/lib/classNames/classNames'
 
-type THTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>
+type HTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
-interface IInputProps extends THTMLInputProps {
+interface IInputProps extends HTMLInputProps {
   className?: string
   type?: string
   value?: string
@@ -15,13 +15,13 @@ interface IInputProps extends THTMLInputProps {
 const Input = memo(function Input({ className = '', type = 'text', value, onChange, ...rest }: IInputProps) {
   const classNames = cn(styles.input, [className])
 
-  const hnadleOnChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     onChange?.(e.target.value)
   }
 
   return (
     <div className={styles['input-wrapper']}>
-      <input className={classNames} type={type} value={value} onChange={hnadleOnChange} {...rest} />
+      <input className={classNames} type={type} value={value} onChange={handleOnChange} {...rest} />
     </div>
   )
 })

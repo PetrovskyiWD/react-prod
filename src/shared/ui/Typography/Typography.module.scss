@@ -1,0 +1,19 @@
+.primary {
+  color: var(--inverted-text-color);
+}
+
+.inverted {
+  color: var(--text-color);
+}
+
+.error {
+  color: #c60000;
+}
+
+.size-s {
+  font: var(--font-s);
+}
+
+.size-m {
+  font: var(--font-m);
+}

@@ -1,5 +1,5 @@
 import path from 'path'
-import { type RuleSetRule, type Configuration } from 'webpack'
+import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
 
 import { type BuildPaths } from '../build/types/config'
 import { buildStyleLoader } from '../build/loaders/buildStyleLoader'
@@ -31,6 +31,8 @@ export default ({ config }: { config: Configuration }): Configuration => {
     })
     config.module.rules?.push(buildStyleLoader(true))
   }
+
+  config.plugins?.push(new DefinePlugin({ __IS_DEV__: true }))
 
   return config
 }

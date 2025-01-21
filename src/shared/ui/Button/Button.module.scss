@@ -5,8 +5,13 @@
   cursor: pointer;
   transition: all 0.15s ease-in;
 
-  &:hover {
+  &:hover,
+  &[disabled] {
     opacity: 0.7;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
   }
 
   svg {

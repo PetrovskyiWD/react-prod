@@ -107,7 +107,9 @@ const config: Config = {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  // globals: {},
+  globals: {
+    __IS_DEV__: false
+  },
 
   // The maximum amount of workers used to run your tests.
   // Can be specified as % or a number.
