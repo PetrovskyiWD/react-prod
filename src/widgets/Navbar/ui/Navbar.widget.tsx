@@ -52,7 +52,7 @@ const Navbar: FC = () => {
         </ul>
       </div>
 
-      <LoginModal isOpen={showModal} onClose={handleCloseModal} />
+      {showModal ? <LoginModal isOpen={showModal} onClose={handleCloseModal} /> : null}
     </>
   )
 }
